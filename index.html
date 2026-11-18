@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Athimanoharam Fans Show · MFCWA UAE</title>
+  <meta name="description" content="Athimanoharam Special Fans Show by MFCWA UAE · 24 December, 9 PM · Star Galleria Cinemas, Deira. Book your tickets online.">
+  <meta property="og:title" content="Athimanoharam Special Fans Show · MFCWA UAE">
+  <meta property="og:description" content="Dec 24 · 9 PM · Star Galleria Cinemas, Deira. Booking started!">
+  <meta property="og:image" content="assets/poster-post.jpg">
+  <link rel="icon" href="assets/ajk-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Oswald:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <video id="bgvideo" class="bg-video" autoplay muted loop playsinline preload="auto" poster="assets/bg-poster.jpg">
+    <source src="assets/bg-video.mp4" type="video/mp4">
+  </video>
+  <div class="bg-shade"></div>
+  <canvas id="bg"></canvas>
+  <button id="sound-btn" class="sound-btn" aria-label="Turn sound on">🔇 <span>Sound</span></button>
+
+  <div id="demo-banner" class="demo-banner" hidden>
+    Demo mode — bookings are only saved in this browser. Add your Google Script URL in <b>config.js</b>.
+  </div>
+
+  <header class="nav">
+    <span class="brand"><span data-f="organizer"></span></span>
+    <nav><a href="#details">Details</a><a href="#songs">Songs</a><a href="#gallery">Posters</a><a href="#book" class="btn-sm" id="nav-book">Book Now</a></nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="eyebrow"><span data-f="organizer"></span> · <span data-f="committee"></span></p>
+      <h1><span data-f="title"></span><small data-f="subtitle"></small></h1>
+      <p class="date-line"><b>DEC 24 · 9 PM</b><br><span data-f="venue"></span>, <span data-f="city"></span></p>
+      <div class="countdown">
+        <div><b id="cd-d">00</b><span>Days</span></div>
+        <div><b id="cd-h">00</b><span>Hours</span></div>
+        <div><b id="cd-m">00</b><span>Mins</span></div>
+        <div><b id="cd-s">00</b><span>Secs</span></div>
+      </div>
+      <div class="hero-cta">
+        <a href="#book" class="btn" id="hero-book">Book Your Seat</a>
+        <button class="btn ghost" data-sample>See Sample Ticket</button>
+      </div>
+      <p class="seats" id="seats-left"></p>
+    </div>
+    <div class="hero-poster tilt">
+      <img src="assets/poster-post.jpg" alt="Athimanoharam Special Fans Show poster – MFCWA UAE, Dec 24, 9 PM, Star Galleria Cinemas Deira" width="1080" height="1350">
+      <span class="badge" id="badge">BOOKING STARTED</span>
+    </div>
+  </section>
+
+  <!-- ABOUT THE FILM -->
+  <section class="film">
+    <img src="assets/film-banner.jpg" alt="Athimanoharam – In cinemas Dec 24 worldwide" loading="lazy">
+    <div class="film-text">
+      <p class="eyebrow">In cinemas · Dec 24 · Worldwide</p>
+      <h2>A realistic emotional thriller drama</h2>
+      <p>About the life of a Sub Inspector. Directed by <b>Tharun Moorthy</b>, produced by <b>Ashiq Usman</b>.
+         Celebrate first day, first show with the MFCWA UAE family.</p>
+    </div>
+  </section>
+
+  <!-- DETAILS -->
+  <section id="details" class="panel">
+    <h2>Show Details</h2>
+    <div class="grid">
+      <div class="card"><h3>📅 Date</h3><p data-f="dateLabel"></p></div>
+      <div class="card"><h3>⏰ Show Time</h3><p data-f="timeLabel"></p></div>
+      <div class="card"><h3>📍 Venue</h3><p><span data-f="venue"></span><br><span data-f="city"></span></p><a id="map-link" target="_blank" rel="noopener">Open in Google Maps →</a></div>
+      <div class="card"><h3>🎟️ Ticket</h3><p><span data-f="currency"></span> <span data-f="price"></span> per person</p></div>
+    </div>
+    <p class="note" data-f="paymentNote"></p>
+  </section>
+
+  <!-- SONGS VIDEO -->
+  <section id="songs" class="panel">
+    <h2>Songs</h2>
+    <div class="video-box">
+      <video id="songs-video" controls playsinline preload="none" poster="assets/bg-poster.jpg">
+        <source src="assets/bg-video.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="panel">
+    <h2>Posters</h2>
+    <div class="gallery">
+      <button class="g-item tilt" data-full="assets/poster-post.jpg"><img src="assets/poster-post.jpg" alt="Fans show poster" loading="lazy"></button>
+      <button class="g-item tilt" data-full="assets/poster-story.jpg"><img src="assets/poster-story.jpg" alt="Fans show story poster" loading="lazy"></button>
+      <button class="g-item tilt" data-full="assets/film-poster.jpg"><img src="assets/film-poster.jpg" alt="Athimanoharam official poster" loading="lazy"></button>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="book" class="panel">
+    <h2>Book Tickets</h2>
+    <div id="soon" class="soon" hidden>
+      <div class="soon-pulse">🎬</div>
+      <h3>Booking Starting Soon!</h3>
+      <p>Online booking for the <b>Athimanoharam Special Fans Show</b> opens very soon. Stay tuned!</p>
+      <p class="soon-sub">For early reservations, contact the committee:</p>
+      <div class="soon-contacts" id="soon-contacts"></div>
+      <button class="btn ghost" type="button" data-sample>See Sample Ticket</button>
+    </div>
+
+    <form id="form" novalidate>
+      <label>Full name*<input name="name" required maxlength="80" autocomplete="name"></label>
+      <label>Mobile (WhatsApp)*<input name="phone" required type="tel" placeholder="05X XXX XXXX" autocomplete="tel"></label>
+      <label>Email<input name="email" type="email" autocomplete="email" placeholder="for confirmation (optional)"></label>
+      <div class="row">
+        <label>Emirate*
+          <select name="emirate" required>
+            <option value="">Select</option>
+            <option>Dubai</option><option>Sharjah</option><option>Ajman</option><option>Abu Dhabi</option>
+            <option>Umm Al Quwain</option><option>Ras Al Khaimah</option><option>Fujairah</option>
+          </select>
+        </label>
+        <label>Tickets*<input name="tickets" id="tickets" type="number" min="1" value="1" required></label>
+      </div>
+      <label>MFCWA Member ID<input name="member" maxlength="40" placeholder="optional"></label>
+      <div class="total">Total: <b id="total"></b></div>
+      <p class="error" id="error" role="alert"></p>
+      <button class="btn" type="submit" id="submit">Confirm Booking</button>
+      <button class="link-btn" type="button" data-sample>What does the ticket look like? See sample →</button>
+    </form>
+
+    <!-- E-TICKET -->
+    <div id="ticket-wrap" hidden>
+      <div class="ticket" id="ticket">
+        <div class="t-sample" id="t-sample" hidden>SAMPLE</div>
+        <div class="t-main">
+          <img class="t-poster" src="assets/ticket-thumb.jpg" alt="">
+          <div class="t-info">
+            <div class="t-org"><span data-f="organizer"></span> · <span data-f="committee"></span></div>
+            <div class="t-title">ATHIMANOHARAM</div>
+            <div class="t-sub" data-f="subtitle"></div>
+            <div class="t-grid">
+              <p><small>Name</small><b id="t-name"></b></p>
+              <p><small>Booking ID</small><b id="t-id"></b></p>
+              <p><small>Date</small><b>24 DEC 2026</b></p>
+              <p><small>Time</small><b data-f="timeLabel"></b></p>
+              <p><small>Venue</small><b><span data-f="venue"></span>, Deira</b></p>
+              <p><small>Paid / Due</small><b id="t-total"></b></p>
+            </div>
+          </div>
+        </div>
+        <div class="t-stub">
+          <div class="t-admit">ADMIT</div>
+          <div class="t-count" id="t-count">1</div>
+          <div id="qr"></div>
+          <div class="t-stub-id" id="t-id2"></div>
+        </div>
+      </div>
+      <p class="note">Screenshot or download this ticket and show it at the entry.</p>
+      <div class="ticket-actions" id="ticket-actions">
+        <button class="btn" id="dl-btn">Download Ticket</button>
+        <a class="btn ghost" id="wa-btn" target="_blank" rel="noopener">Send on WhatsApp</a>
+        <button class="btn ghost" id="again">Back to Booking</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Organized by <b data-f="organizer"></b> <span data-f="committee"></span></p>
+    <p class="contacts">For tickets contact: <span id="contacts"></span></p>
+    <p class="credit"><img src="assets/ajk-logo.png" alt="" width="36" height="32"> Website by AJK Visual Studio</p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" hidden><img alt=""><button aria-label="Close">✕</button></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="config.js"></script>
+  <script src="scene.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
